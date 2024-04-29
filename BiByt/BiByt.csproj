@@ -13,4 +13,7 @@
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
   </ItemGroup>
 
-</Project>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+    <Folder Include="src\" />
+  </ItemGroup></Project>
