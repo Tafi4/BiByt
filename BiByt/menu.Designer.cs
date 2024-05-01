@@ -186,7 +186,7 @@
             series1.Name = "Series1";
             series1.XAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
             chart1.Series.Add(series1);
-            chart1.Size = new Size(297, 533);
+            chart1.Size = new Size(392, 533);
             chart1.TabIndex = 29;
             chart1.Text = "chart1";
             // 
@@ -243,7 +243,7 @@
             button5.Text = "Доходы";
             button5.UseVisualStyleBackColor = false;
             // 
-            // Form1
+            // menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -266,7 +266,7 @@
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            Name = "Form1";
+            Name = "menu";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
