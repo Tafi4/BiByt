@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menu));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             pictureBox1 = new PictureBox();
             npgsqlCommandBuilder1 = new Npgsql.NpgsqlCommandBuilder();
             pictureBox2 = new PictureBox();
@@ -46,10 +46,11 @@
             pictureBox8 = new PictureBox();
             chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             pictureBox9 = new PictureBox();
-            button8 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            TransactionsButton = new Button();
+            AddTransactionButton = new Button();
+            ExpensesButton = new Button();
+            IncomeButton = new Button();
+            listBox1 = new ListBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -173,19 +174,19 @@
             // chart1
             // 
             chart1.AccessibleRole = AccessibleRole.ScrollBar;
-            chartArea1.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            chart1.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            chart1.Legends.Add(legend3);
             chart1.Location = new Point(32, 185);
             chart1.Name = "chart1";
             chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.XAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            chart1.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            series3.XAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            chart1.Series.Add(series3);
             chart1.Size = new Size(392, 533);
             chart1.TabIndex = 29;
             chart1.Text = "chart1";
@@ -199,49 +200,62 @@
             pictureBox9.TabIndex = 30;
             pictureBox9.TabStop = false;
             // 
-            // button8
+            // TransactionsButton
             // 
-            button8.BackColor = Color.FromArgb(247, 166, 0);
-            button8.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button8.Location = new Point(64, 779);
-            button8.Name = "button8";
-            button8.Size = new Size(303, 62);
-            button8.TabIndex = 36;
-            button8.Text = "Транзакции";
-            button8.UseVisualStyleBackColor = false;
+            TransactionsButton.BackColor = Color.FromArgb(247, 166, 0);
+            TransactionsButton.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            TransactionsButton.Location = new Point(64, 779);
+            TransactionsButton.Name = "TransactionsButton";
+            TransactionsButton.Size = new Size(303, 62);
+            TransactionsButton.TabIndex = 36;
+            TransactionsButton.Text = "Транзакции";
+            TransactionsButton.UseVisualStyleBackColor = false;
+            TransactionsButton.Click += TransactionsButton_Click;
             // 
-            // button3
+            // AddTransactionButton
             // 
-            button3.BackColor = Color.FromArgb(247, 166, 0);
-            button3.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button3.Location = new Point(1062, 779);
-            button3.Name = "button3";
-            button3.Size = new Size(303, 62);
-            button3.TabIndex = 37;
-            button3.Text = "Добавить тразакцию";
-            button3.UseVisualStyleBackColor = false;
+            AddTransactionButton.BackColor = Color.FromArgb(247, 166, 0);
+            AddTransactionButton.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            AddTransactionButton.Location = new Point(1062, 779);
+            AddTransactionButton.Name = "AddTransactionButton";
+            AddTransactionButton.Size = new Size(303, 62);
+            AddTransactionButton.TabIndex = 37;
+            AddTransactionButton.Text = "Добавить тразакцию";
+            AddTransactionButton.UseVisualStyleBackColor = false;
+            AddTransactionButton.Click += AddTransactionButton_Click;
             // 
-            // button4
+            // ExpensesButton
             // 
-            button4.BackColor = Color.FromArgb(247, 166, 0);
-            button4.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button4.Location = new Point(731, 779);
-            button4.Name = "button4";
-            button4.Size = new Size(303, 62);
-            button4.TabIndex = 38;
-            button4.Text = "Расходы";
-            button4.UseVisualStyleBackColor = false;
+            ExpensesButton.BackColor = Color.FromArgb(247, 166, 0);
+            ExpensesButton.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            ExpensesButton.Location = new Point(731, 779);
+            ExpensesButton.Name = "ExpensesButton";
+            ExpensesButton.Size = new Size(303, 62);
+            ExpensesButton.TabIndex = 38;
+            ExpensesButton.Text = "Расходы";
+            ExpensesButton.UseVisualStyleBackColor = false;
+            ExpensesButton.Click += ExpensesButton_Click;
             // 
-            // button5
+            // IncomeButton
             // 
-            button5.BackColor = Color.FromArgb(247, 166, 0);
-            button5.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button5.Location = new Point(397, 779);
-            button5.Name = "button5";
-            button5.Size = new Size(303, 62);
-            button5.TabIndex = 39;
-            button5.Text = "Доходы";
-            button5.UseVisualStyleBackColor = false;
+            IncomeButton.BackColor = Color.FromArgb(247, 166, 0);
+            IncomeButton.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            IncomeButton.Location = new Point(397, 779);
+            IncomeButton.Name = "IncomeButton";
+            IncomeButton.Size = new Size(303, 62);
+            IncomeButton.TabIndex = 39;
+            IncomeButton.Text = "Доходы";
+            IncomeButton.UseVisualStyleBackColor = false;
+            IncomeButton.Click += IncomeButton_Click;
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(655, 185);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(710, 529);
+            listBox1.TabIndex = 40;
             // 
             // menu
             // 
@@ -249,10 +263,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(23, 23, 23);
             ClientSize = new Size(1424, 881);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button8);
+            Controls.Add(listBox1);
+            Controls.Add(IncomeButton);
+            Controls.Add(ExpensesButton);
+            Controls.Add(AddTransactionButton);
+            Controls.Add(TransactionsButton);
             Controls.Add(pictureBox9);
             Controls.Add(chart1);
             Controls.Add(pictureBox8);
@@ -298,9 +313,10 @@
         private PictureBox pictureBox8;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private PictureBox pictureBox9;
-        private Button button8;
-        private Button button3;
-        private Button button4;
-        private Button button5;
+        private Button TransactionsButton;
+        private Button AddTransactionButton;
+        private Button ExpensesButton;
+        private Button IncomeButton;
+        private ListBox listBox1;
     }
 }

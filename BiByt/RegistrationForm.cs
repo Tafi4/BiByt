@@ -10,29 +10,24 @@ using System.Windows.Forms;
 
 namespace BiByt
 {
-    public partial class menu : Form
+    public partial class RegistrationForm : Form
     {
-        public menu()
+        public RegistrationForm()
         {
             InitializeComponent();
         }
 
-        private void TransactionsButton_Click(object sender, EventArgs e)
+        private void CreateAccountButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void IncomeButton_Click(object sender, EventArgs e)
+        private void AgreementButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void ExpensesButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddTransactionButton_Click(object sender, EventArgs e)
+        private void LoginButton_Click(object sender, EventArgs e)
         {
 
         }
