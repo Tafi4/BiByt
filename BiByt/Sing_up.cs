@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace BiByt
 {
-    public partial class Registration : Form
+    public partial class Sing_up : Form
     {
-        public Registration()
+        public Sing_up()
         {
             InitializeComponent();
-        }
-
-        private void RegisterBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UserAgreementBtn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

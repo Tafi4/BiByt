@@ -10,24 +10,14 @@ using System.Windows.Forms;
 
 namespace BiByt
 {
-    public partial class Login : Form
+    public partial class menu : Form
     {
-        public Login()
+        public menu()
         {
             InitializeComponent();
         }
 
-        private void LoginBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UserAgreementBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CreateAccountBtn_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
 
         }
