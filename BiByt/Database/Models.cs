@@ -1,21 +1,29 @@
 ﻿using System.Collections.Generic;
 
-namespace BiByt.Database
+namespace BiByt.Database;
+
+public class User
 {
-    // public class Models { }
+    public long Id { get; set; }
+    public string Username { get; set; }
+    public string Password { get; set; }
+}
 
-    public class User
+public class Transaction
+{
+    public enum TransactionType
     {
-        public long Id { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public List<int>? TransactionIds { get; set; }
+        Translation,
+        Cash = 6010,
+        Clothes = 5094,
+        CarService = 5511,
+        Pharmacy = 5122,
+        House = 1520,
+        Other,
     }
 
-    public class Transaction
-    {
-        public int Id { get; set; }
-        public int Cost { get; set; }
-        public int Description { get; set; }
-    }
+    public int Id { get; set; }
+    public int UserId { get; set; }
+    public int Cost { get; set; }
+    public TransactionType Type { get; set; }
 }

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<configuration>
+    <appSettings>
+        <add key="PG_HOST" value="127.0.0.1" />
+        <add key="PG_PORT" value="5432" />
+        <add key="PG_USERNAME" value="postgres" />
+        <add key="PG_PASSWORD" value="password" />
+        <add key="PG_PATH" value="database" />
+    </appSettings>
+</configuration>
