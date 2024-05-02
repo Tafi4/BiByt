@@ -2,15 +2,15 @@
 
 public class Query
 {
-    public T Get<T>(Func<T, bool> predicate) where T : class
+    public static T Get<T>(Func<T, bool> predicate) where T : class
     {
-        using (ApplicationContext context = new ApplicationContext())
+        using (AppContext context = new AppContext())
             return context.Set<T>().FirstOrDefault(predicate);
     }
 
-    public T Create<T>(Func<T> createFunc) where T : class
+    public static T Create<T>(Func<T> createFunc) where T : class
     {
-        using (ApplicationContext context = new ApplicationContext())
+        using (AppContext context = new AppContext())
         {
             T entity = createFunc();
             context.Set<T>().Add(entity);

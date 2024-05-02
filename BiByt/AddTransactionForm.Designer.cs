@@ -1,6 +1,6 @@
 ﻿namespace BiByt
 {
-    partial class Add_transaction
+    partial class AddTransactionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_transaction));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTransactionForm));
             button5 = new Button();
             button4 = new Button();
             button3 = new Button();
-            button8 = new Button();
+            TransactionsButton = new Button();
             pictureBox9 = new PictureBox();
             pictureBox8 = new PictureBox();
             pictureBox7 = new PictureBox();
@@ -44,11 +44,11 @@
             pictureBox4 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
             label1 = new Label();
             label3 = new Label();
-            textBox2 = new TextBox();
-            button7 = new Button();
+            AmountText = new TextBox();
+            AddTransactionButton = new Button();
+            TypeTransBox = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
@@ -92,16 +92,17 @@
             button3.Text = "Добавить тразакцию";
             button3.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // TransactionsButton
             // 
-            button8.BackColor = Color.FromArgb(247, 166, 0);
-            button8.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button8.Location = new Point(55, 776);
-            button8.Name = "button8";
-            button8.Size = new Size(303, 62);
-            button8.TabIndex = 52;
-            button8.Text = "Транзакции";
-            button8.UseVisualStyleBackColor = false;
+            TransactionsButton.BackColor = Color.FromArgb(247, 166, 0);
+            TransactionsButton.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            TransactionsButton.Location = new Point(55, 776);
+            TransactionsButton.Name = "TransactionsButton";
+            TransactionsButton.Size = new Size(303, 62);
+            TransactionsButton.TabIndex = 52;
+            TransactionsButton.Text = "Транзакции";
+            TransactionsButton.UseVisualStyleBackColor = false;
+            TransactionsButton.Click += TransactionsButton_Click;
             // 
             // pictureBox9
             // 
@@ -206,15 +207,6 @@
             pictureBox1.TabIndex = 40;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
-            // 
-            textBox1.BackColor = SystemColors.ScrollBar;
-            textBox1.Location = new Point(144, 347);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(622, 60);
-            textBox1.TabIndex = 56;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -223,9 +215,9 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(348, 291);
             label1.Name = "label1";
-            label1.Size = new Size(181, 32);
+            label1.Size = new Size(189, 32);
             label1.TabIndex = 57;
-            label1.Text = "Наименование";
+            label1.Text = "Тип транзакции";
             // 
             // label3
             // 
@@ -239,41 +231,51 @@
             label3.TabIndex = 58;
             label3.Text = "Сумма";
             // 
-            // textBox2
+            // AmountText
             // 
-            textBox2.BackColor = SystemColors.ScrollBar;
-            textBox2.Location = new Point(922, 347);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(239, 60);
-            textBox2.TabIndex = 59;
+            AmountText.BackColor = SystemColors.ScrollBar;
+            AmountText.Location = new Point(922, 347);
+            AmountText.Multiline = true;
+            AmountText.Name = "AmountText";
+            AmountText.Size = new Size(239, 60);
+            AmountText.TabIndex = 59;
             // 
-            // button7
+            // AddTransactionButton
             // 
-            button7.BackColor = Color.FromArgb(247, 166, 0);
-            button7.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button7.Location = new Point(441, 516);
-            button7.Name = "button7";
-            button7.Size = new Size(553, 62);
-            button7.TabIndex = 61;
-            button7.Text = "Добавить тразакцию";
-            button7.UseVisualStyleBackColor = false;
+            AddTransactionButton.BackColor = Color.FromArgb(247, 166, 0);
+            AddTransactionButton.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            AddTransactionButton.Location = new Point(441, 516);
+            AddTransactionButton.Name = "AddTransactionButton";
+            AddTransactionButton.Size = new Size(553, 62);
+            AddTransactionButton.TabIndex = 61;
+            AddTransactionButton.Text = "Добавить тразакцию";
+            AddTransactionButton.UseVisualStyleBackColor = false;
+            AddTransactionButton.Click += AddTransactionButton_Click;
             // 
-            // Form1
+            // TypeTransBox
+            // 
+            TypeTransBox.FormattingEnabled = true;
+            TypeTransBox.Items.AddRange(new object[] { "Перевод", "Наличные", "Одежда", "АвтоСервис", "Аптека", "Дом", "Другое" });
+            TypeTransBox.Location = new Point(388, 357);
+            TypeTransBox.Name = "TypeTransBox";
+            TypeTransBox.Size = new Size(121, 23);
+            TypeTransBox.TabIndex = 62;
+            // 
+            // AddTransactionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(23, 23, 23);
             ClientSize = new Size(1424, 881);
-            Controls.Add(button7);
-            Controls.Add(textBox2);
+            Controls.Add(TypeTransBox);
+            Controls.Add(AddTransactionButton);
+            Controls.Add(AmountText);
             Controls.Add(label3);
             Controls.Add(label1);
-            Controls.Add(textBox1);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
-            Controls.Add(button8);
+            Controls.Add(TransactionsButton);
             Controls.Add(pictureBox9);
             Controls.Add(pictureBox8);
             Controls.Add(pictureBox7);
@@ -285,8 +287,8 @@
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "AddTransactionForm";
+            Text = "Добавить транзакцию";
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
@@ -304,7 +306,7 @@
         private Button button5;
         private Button button4;
         private Button button3;
-        private Button button8;
+        private Button TransactionsButton;
         private PictureBox pictureBox9;
         private PictureBox pictureBox8;
         private PictureBox pictureBox7;
@@ -316,10 +318,10 @@
         private PictureBox pictureBox4;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private TextBox textBox1;
         private Label label1;
         private Label label3;
-        private TextBox textBox2;
-        private Button button7;
+        private TextBox AmountText;
+        private Button AddTransactionButton;
+        private ComboBox TypeTransBox;
     }
 }

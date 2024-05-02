@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BiByt.Database;
 
-public class ApplicationContext : DbContext
+public class AppContext : DbContext
 {
-    public ApplicationContext()
+    public AppContext()
     {
         // Database.EnsureDeleted();
         Database.EnsureCreated();
@@ -29,7 +29,6 @@ public class ApplicationContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // modelBuilder.ApplyConfiguration(new UserConfiguration());
         modelBuilder.Entity<User>(UserConfigure);
         modelBuilder.Entity<Transaction>(TransactionConfigure);
     }
@@ -61,18 +60,3 @@ public class ApplicationContext : DbContext
             .HasColumnName("type");
     }
 }
-
-// public class UserConfiguration : IEntityTypeConfiguration<User>
-// {
-//     public void Configure(EntityTypeBuilder<User> builder)
-//     {
-// builder.Property(c => c.Id)
-//     .HasColumnName("id");
-// builder.Property(c => c.Username)
-//     .HasColumnName("username")
-//     .IsRequired();
-// builder.Property(c => c.Password)
-//     .HasColumnName("password")
-//     .HasMaxLength(16);
-//     }
-// }

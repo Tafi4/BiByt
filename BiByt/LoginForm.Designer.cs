@@ -48,7 +48,6 @@
             LoginText.TabIndex = 0;
             LoginText.Text = "Логин";
             LoginText.TextAlign = HorizontalAlignment.Center;
-            LoginText.TextChanged += LoginText_TextChanged;
             // 
             // PasswordText
             // 
@@ -127,6 +126,7 @@
             DoubleBuffered = true;
             Name = "LoginForm";
             Text = "Вход";
+            Shown += LoginForm_Shown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

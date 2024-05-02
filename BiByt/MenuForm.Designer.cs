@@ -1,6 +1,6 @@
 ﻿namespace BiByt
 {
-    partial class menu
+    partial class MenuForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menu));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuForm));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             pictureBox1 = new PictureBox();
             npgsqlCommandBuilder1 = new Npgsql.NpgsqlCommandBuilder();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             label2 = new Label();
             pictureBox5 = new PictureBox();
-            button1 = new Button();
-            button2 = new Button();
+            ExitButton = new Button();
+            DonateButton = new Button();
             chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             TransactionsButton = new Button();
             AddTransactionButton = new Button();
             ExpensesButton = new Button();
             IncomeButton = new Button();
-            listBox1 = new ListBox();
+            ListTransactions = new ListBox();
             pictureBox4 = new PictureBox();
             pictureBox6 = new PictureBox();
             pictureBox7 = new PictureBox();
@@ -109,44 +109,46 @@
             pictureBox5.TabIndex = 23;
             pictureBox5.TabStop = false;
             // 
-            // button1
+            // ExitButton
             // 
-            button1.BackColor = Color.FromArgb(247, 166, 0);
-            button1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button1.Location = new Point(1350, 46);
-            button1.Name = "button1";
-            button1.Size = new Size(185, 52);
-            button1.TabIndex = 24;
-            button1.Text = "Выход";
-            button1.UseVisualStyleBackColor = false;
+            ExitButton.BackColor = Color.FromArgb(247, 166, 0);
+            ExitButton.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            ExitButton.Location = new Point(1350, 46);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(185, 52);
+            ExitButton.TabIndex = 24;
+            ExitButton.Text = "Выход";
+            ExitButton.UseVisualStyleBackColor = false;
+            ExitButton.Click += ExitButton_Click;
             // 
-            // button2
+            // DonateButton
             // 
-            button2.BackColor = Color.FromArgb(247, 166, 0);
-            button2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button2.Location = new Point(1008, 46);
-            button2.Name = "button2";
-            button2.Size = new Size(245, 52);
-            button2.TabIndex = 25;
-            button2.Text = "Пожертвовать";
-            button2.UseVisualStyleBackColor = false;
+            DonateButton.BackColor = Color.FromArgb(247, 166, 0);
+            DonateButton.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            DonateButton.Location = new Point(1008, 46);
+            DonateButton.Name = "DonateButton";
+            DonateButton.Size = new Size(245, 52);
+            DonateButton.TabIndex = 25;
+            DonateButton.Text = "Пожертвовать";
+            DonateButton.UseVisualStyleBackColor = false;
+            DonateButton.Click += DonateButton_Click;
             // 
             // chart1
             // 
             chart1.AccessibleRole = AccessibleRole.ScrollBar;
-            chartArea2.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chart1.Legends.Add(legend1);
             chart1.Location = new Point(42, 145);
             chart1.Name = "chart1";
             chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            series2.XAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.XAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            chart1.Series.Add(series1);
             chart1.Size = new Size(392, 533);
             chart1.TabIndex = 29;
             chart1.Text = "chart1";
@@ -199,14 +201,14 @@
             IncomeButton.UseVisualStyleBackColor = false;
             IncomeButton.Click += IncomeButton_Click;
             // 
-            // listBox1
+            // ListTransactions
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(680, 149);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(868, 529);
-            listBox1.TabIndex = 40;
+            ListTransactions.FormattingEnabled = true;
+            ListTransactions.ItemHeight = 15;
+            ListTransactions.Location = new Point(680, 149);
+            ListTransactions.Name = "ListTransactions";
+            ListTransactions.Size = new Size(868, 529);
+            ListTransactions.TabIndex = 40;
             // 
             // pictureBox4
             // 
@@ -235,7 +237,7 @@
             pictureBox7.TabIndex = 43;
             pictureBox7.TabStop = false;
             // 
-            // menu
+            // MenuForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -244,22 +246,22 @@
             Controls.Add(pictureBox7);
             Controls.Add(pictureBox6);
             Controls.Add(pictureBox4);
-            Controls.Add(listBox1);
+            Controls.Add(ListTransactions);
             Controls.Add(IncomeButton);
             Controls.Add(ExpensesButton);
             Controls.Add(AddTransactionButton);
             Controls.Add(TransactionsButton);
             Controls.Add(chart1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(DonateButton);
+            Controls.Add(ExitButton);
             Controls.Add(pictureBox5);
             Controls.Add(label2);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            Name = "menu";
-            Text = "Form1";
-            Load += menu_Load;
+            Name = "MenuForm";
+            Text = "Все транзакции";
+            Load += MenuForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -280,14 +282,14 @@
         private PictureBox pictureBox3;
         private Label label2;
         private PictureBox pictureBox5;
-        private Button button1;
-        private Button button2;
+        private Button ExitButton;
+        private Button DonateButton;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private Button TransactionsButton;
         private Button AddTransactionButton;
         private Button ExpensesButton;
         private Button IncomeButton;
-        private ListBox listBox1;
+        private ListBox ListTransactions;
         private PictureBox pictureBox4;
         private PictureBox pictureBox6;
         private PictureBox pictureBox7;

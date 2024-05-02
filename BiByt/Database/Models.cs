@@ -22,8 +22,8 @@ public class Transaction
         Other,
     }
 
-    public int Id { get; set; }
-    public int UserId { get; set; }
-    public int Cost { get; set; }
+    public long Id { get; set; }
+    public long UserId { get; set; }
+    public long Cost { get; set; }
     public TransactionType Type { get; set; }
 }
