@@ -48,6 +48,7 @@
             LoginText.TabIndex = 0;
             LoginText.Text = "Логин";
             LoginText.TextAlign = HorizontalAlignment.Center;
+            LoginText.TextChanged += LoginText_TextChanged;
             // 
             // PasswordText
             // 

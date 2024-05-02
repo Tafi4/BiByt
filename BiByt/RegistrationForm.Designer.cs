@@ -35,7 +35,7 @@
             CreateAccountButton = new Button();
             PasswordText = new TextBox();
             LoginText = new TextBox();
-            ConfimPassowordText = new TextBox();
+            ConfirmPasswordText = new TextBox();  // Заменили ConfimPassowordText на ConfirmPasswordText
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -110,17 +110,18 @@
             LoginText.TabIndex = 13;
             LoginText.Text = "Логин";
             LoginText.TextAlign = HorizontalAlignment.Center;
+            LoginText.TextChanged += LoginText_TextChanged;
             // 
-            // ConfimPassowordText
+            // ConfirmPasswordText
             // 
-            ConfimPassowordText.BackColor = Color.FromArgb(247, 166, 0);
-            ConfimPassowordText.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 204);
-            ConfimPassowordText.Location = new Point(85, 222);
-            ConfimPassowordText.Name = "ConfimPassowordText";
-            ConfimPassowordText.Size = new Size(235, 33);
-            ConfimPassowordText.TabIndex = 19;
-            ConfimPassowordText.Text = "Повторите пароль";
-            ConfimPassowordText.TextAlign = HorizontalAlignment.Center;
+            ConfirmPasswordText.BackColor = Color.FromArgb(247, 166, 0);
+            ConfirmPasswordText.Font = new Font("Segoe UI", 14.25F, FontStyle.Italic, GraphicsUnit.Point, 204);
+            ConfirmPasswordText.Location = new Point(85, 222);
+            ConfirmPasswordText.Name = "ConfirmPasswordText";
+            ConfirmPasswordText.Size = new Size(235, 33);
+            ConfirmPasswordText.TabIndex = 19;
+            ConfirmPasswordText.Text = "Повторите пароль";
+            ConfirmPasswordText.TextAlign = HorizontalAlignment.Center;
             // 
             // RegistrationForm
             // 
@@ -128,7 +129,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(23, 23, 23);
             ClientSize = new Size(408, 450);
-            Controls.Add(ConfimPassowordText);
+            Controls.Add(ConfirmPasswordText); // Изменили здесь
             Controls.Add(AgreementButton);
             Controls.Add(LoginButton);
             Controls.Add(pictureBox1);
@@ -150,6 +151,7 @@
         private Button CreateAccountButton;
         private TextBox PasswordText;
         private TextBox LoginText;
-        private TextBox ConfimPassowordText;
+        private TextBox ConfirmPasswordText;
+
     }
 }

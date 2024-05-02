@@ -36,5 +36,10 @@ namespace BiByt
         {
 
         }
+
+        private void menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
